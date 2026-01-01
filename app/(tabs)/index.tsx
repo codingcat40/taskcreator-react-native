@@ -1,6 +1,6 @@
 import { api } from "@/convex/_generated/api";
 import useTheme from "@/hooks/useTheme";
-import { useQuery } from "convex/react";
+import { useMutation, useQuery } from "convex/react";
 import { Link } from "expo-router";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
@@ -20,8 +20,8 @@ const styles = StyleSheet.create({
 export default function Index() {
   const {toggleDarkMode} = useTheme();
 
-  const todos = useQuery(api.todos.getTodos)
-  console.log(todos)
+  // const todos = useQuery(api.todos.getTodos)
+  // console.log(todos)
 
   return (
     <View
@@ -30,8 +30,11 @@ export default function Index() {
       <Text style={styles.content}>Edit appindex.tsx to edit this screen.</Text>
       <Text>hey</Text>
       <TouchableOpacity onPress={toggleDarkMode}>
-         <Text>the dark mode</Text>
+         <Text>Toggle the mode</Text>
          </TouchableOpacity>
+
+      
+  
     </View>
   );
 }
